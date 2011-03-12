@@ -1,0 +1,117 @@
+######################################################################
+# Basic Graphical Counter                 Version 1.0                #
+# Copyright 1999 Frederic TYNDIUK (FTLS)  All Rights Reserved.       #
+# E-Mail: tyndiuk@ftls.org                Script License: GPL        #
+# Created  ??/??/98                       Last Modified 05/30/99     #
+# Scripts Archive at:                     http://www.ftls.org/cgi/   #
+######################################################################
+
+
+1. What is it ?
+===============
+
+	This Counter is a simple script to display a counter on your Web page.
+It should be include some tag IMG of your Web page.
+
+
+2. System Requirements:
+=======================
+
+	- Perl 4.0 or newer; you can get it at http://www.perl.com/
+	- A web server, you must have access to add / execute CGI scripts.
+
+
+3. What this archive contains ?
+===============================
+
+	This archive comes with 5 differents files:
+	    1) COPYING:      Copyright informations (GPL).
+	    2) README:       This file.
+	    3) LISEZMOI:     French doc...
+	    4) counter.cgi:  The Perl script.
+	    5) count.txt:    Counter data.
+	    6) Digits/       Sample Digits image.
+
+
+4. Installation and Configuration:
+==================================
+
+	It's a Perl script, so installation is pretty easy. You don't need to
+compile anything. 
+
+	Copy counter.cgi in your /cgi-bin/ directory
+	Make it executable, unix only (chmod a+rx counter.cgi)
+
+	Edit counter.cgi, you will have to do some configuration:	
+
+		Change #/usr/bin/perl, if it's necessary...
+
+		Change in "Necessary Variables Section"
+
+	# URL of gif digits (0->9)
+	$digits_basedir = "http://www.hostname.dom/images/Digits/";
+
+	# Real path of file counter
+	$count_file = "/Absolute/path/to/count.txt";
+
+
+5. How to run it ?
+==================
+
+Add in your Web page :
+	<IMG SRC="http://www.hostname.dom/cgi-bin/counter.cgi?X">
+	X is the digits number ...
+
+Sample (For a 3 digits counter):
+	<IMG SRC="http://www.hostname.com/cgi-bin/counter.cgi?0">
+		Write the first digits.
+	<IMG SRC="http://www.hostname.com/cgi-bin/counter.cgi?1">
+		Write the second digits.
+	<IMG SRC="http://www.hostname.com/cgi-bin/counter.cgi?2&w">
+		Write the 3th digits and Increment the counter file.
+
+
+6. Special Thanks:
+==================
+
+	Thanks to Stephane Roquelle (http://www.open-mix.com) for digits.
+
+
+7. Version history:
+===================
+
+	Version 1.0			05/30/99  - Archive Created.
+
+
+8. Copyright:
+=============
+
+	This software is copyright (C) 1999 Frederic TYNDIUK. It is distributed
+under the terms of the GNU General Public License (GPL). Because it is licensed
+free of charge, there is NO WARRANTY, it is provided AS IS. The author can not
+be held liable for any damage that might arise from the use of this software.
+Use it at your own risk. 
+	See the file COPYING for more details (or http://www.gnu.org/).
+
+
+9. Updates ?
+============
+
+	Latest version and New Scripts can be found at:
+	
+			http://www.ftls.org/en/
+
+
+10. Contact:
+============
+
+	Please feel free to contact me with any comments, suggestions, bug fixes
+criticism, or just a happiness messages.
+
+	If you run into any problems while trying to configure these scripts
+first read this file carefully, if you don't find any solution, send me a Mail.
+
+	E-Mail: tyndiuk@ftls.org
+	Web: http://www.ftls.org/
+
+                                                  Frederic TYNDIUK

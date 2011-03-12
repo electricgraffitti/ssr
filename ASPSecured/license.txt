@@ -1,0 +1,53 @@
+
+ATTENTION: USE OF THE SOFTWARE IS SUBJECT TO THE SOFTWARE LICENSE
+TERMS SET FORTH BELOW. USING THE SOFTWARE INDICATES YOUR ACCEPTANCE
+OF THESE LICENSE TERMS. IF YOU DO NOT ACCEPT THESE LICENSE TERMS, 
+YOU MUST RETURN THE SOFTWARE FOR A FULL REFUND. 
+
+License Grant 
+ASP-Programmers.com grants you a license to Use one copy of the Software, ASPSecured.
+"Use" means storing, loading, installing, executing or 
+displaying the Software.  You may not disable any licensing
+features of the Software. 
+
+Ownership 
+The Software is owned and copyrighted by ASP-Programmers.com. Your 
+license confers no title or ownership in the Software and is 
+not a sale of any rights to the Software. 
+
+Copies and Adaptations 
+You may only make copies or adaptations of the Software for 
+archival purposes or when copying or adaptation is an essential 
+step in the authorized Use of the Software.  You must reproduce 
+all copyright notices in the original Software on all copies or 
+adaptations. You can customize the software to fit your site, but you can not sell your modifications.
+
+Termination 
+ASP-Programmers.com may terminate your license upon notice for failure to 
+comply with any of these License Terms.  Upon termination, you
+must immediately destroy the Software, together with all copies,
+adaptations and merged portions in any form. 
+
+Export Requirements 
+You may not export or re-export the Software or any copy or 
+adaptation in violation of any applicable laws or regulations. 
+
+U.S. Government Restricted Rights 
+The Software and documentation have been developed entirely at 
+private expense and are provided as "Commercial Computer Software"
+or "restricted computer software".  They are delivered and licensed
+as "commercial computer software" as defined in DFARS 252.227-7013
+(Oct 1988), DFARS 252.211-7015 (May 1991) or DFARS 252.227-7014 
+(Jun 1995), as a "commercial item" as defined in FAR 2.101 (a), 
+or as "Restricted computer software" as defined in FAR 52.227-19 
+(Jun 1987) (or any equivalent agency regulation or contract clause),
+whichever is applicable. 
+
+
+ASP-Programmers.com does not warrant that the operation of his products will
+be uninterrupted or error free.  
+
+IN NO EVENT WILL ASP-Programmers.com BE LIABLE FOR LOSS OF DATA OR FOR DIRECT,
+SPECIAL, INCIDENTAL, CONSEQUENTIAL (INCLUDING LOST PROFIT), OR OTHER
+DAMAGE, WHETHER BASED IN CONTRACT, TORT, OR OTHERWISE.
+

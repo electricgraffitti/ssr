@@ -1,0 +1,178 @@
+/**
+ *	Stylesheet for ConquerChat
+ *	
+ *	From this stylesheet your are able to control most text-formatting 
+ *	settings for ConquerChat. Be aware of some differencies between
+ *	various browser brands. If you want to maintain the highest amount
+ *	of compatibility between browsers make sure to test changes to this 
+ *	file.
+ *	
+ */
+
+BODY, TABLE, TR, TD, P, UL, LI, FORM, INPUT
+{
+	font-family: Verdana, Geneva, Arial, Helvetica, Sans-serif;
+	font-size: x-small;
+}
+
+BODY.Users
+{
+	margin: 0px 0px 0px 0px;
+	background-color: White;
+	color: Black;
+}
+
+BODY.Rooms
+{
+	margin: 0px 0px 0px 0px;
+	background-color: White;
+	color: Black;
+}
+
+A
+{
+	text-decoration: none;
+}
+
+A:link
+{
+	color: rgb(255, 99, 23);
+}
+
+A:visited
+{
+	color: #A00000;
+}
+
+A:active
+{
+	color: #808080;
+}
+
+A:hover
+{
+	color: #FF0000;
+}
+
+.dark
+{
+	;
+}
+
+.light
+{
+	;
+}
+
+.Message
+{
+	font-family: verdana, geneva, arial, helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000000;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: black;
+	padding-left: 8px;
+}
+
+
+.PrivateMessage
+{
+	font-family: verdana, geneva, arial, helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000000;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: black;
+	padding-left: 8px;
+}
+
+TD.MessageName
+{
+	background-color: #F0F0F0;
+}
+
+TD.PrivateMessageName, SPAN.PrivateMessageName
+{
+	background-color: #FF0000;
+	color: white;
+	font-family: Verdana, Geneva, Helvetica, Arial, Sans-serif;
+	font-size: 7.5pt;
+	font-weight: bold;
+}
+
+.Name
+{
+	font-family: verdana, geneva, arial, helvetica, sans-serif;
+	font-size: 7.5pt;
+	font-weight: bold;
+	color: Maroon;
+}
+
+.LoggedIn
+{
+	font-family: verdana, geneva, arial, helvetica, sans-serif;
+	font-size: 8.5pt;
+	color: #C0C0C0;
+}
+
+.LoggedOut
+{
+	font-family: verdana, geneva, arial, helvetica, sans-serif;
+	font-size: 8.5pt;
+	color: #C0C0C0;
+}
+
+.LeavingRoom
+{
+	font-family: verdana, geneva, arial, helvetica, sans-serif;
+	font-size: 8.5pt;
+	color: #C0C0C0;
+}
+
+.EnteringRoom
+{
+	font-family: verdana, geneva, arial, helvetica, sans-serif;
+	font-size: 8.5pt;
+	color: #C0C0C0;
+}
+
+.Error
+{
+	font-family: verdana, geneva, arial, helvetica, sans-serif;
+	font-size: 8pt;
+	color: #FF0000;
+}
+
+.Info
+{
+	font-family: verdana, geneva, arial, helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: bold;
+	color: green;
+}
+
+INPUT.editField
+{
+	font-size: 9pt;
+	font-family: monospace, none;
+/*	width: 100%;*/
+}
+
+.infoHeader
+{
+	font-family: verdana, geneva, arial, helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+}
+
+.infoText
+{
+	font-size: 8pt;
+}
+
+.Cinfo
+{
+	font-size:8pt;
+}

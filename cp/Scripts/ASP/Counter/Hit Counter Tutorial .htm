@@ -1,0 +1,341 @@
+<html>
+<head>
+<title>Hit Counter Tutorial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div align="center"> 
+  <h1>Hit Counter Tutorial</h1>
+  This and other Web Tutorials can be found at: - <a href="http://www.webwizguide.com" target="_blank">http://www.webwizguide.com</a> 
+  <br>
+  <font size="2"><b>&copy; Copyright 2001 Web Wiz Guide</b></font><br>
+  <br>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="15%" height="2"> 
+      <table width="270" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="2"> 
+            <table width="255" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000">
+              <tr> 
+                <td width="255" height="2"> 
+                  <table width="253" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+                    <tr> 
+                      <td width="76" class="text"><span style="font-weight: bolder;">Author:</span></td>
+                      <td width="165" class="text">Bruce Corkhill</td>
+                    </tr>
+                    <tr> 
+                      <td width="76" class="text"><span style="font-weight: bolder;">Difficulty:</span></td>
+                      <td width="165" class="text">Medium Low</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td valign="bottom" width="85%" class="text" height="2">If you are reading 
+      this page then I shall assume that you already know a little bit about ASP 
+      and running ASP scripts. </td>
+  </tr>
+</table>
+<br>
+Before we can start writing the ASP for the hit counter we first need to create 
+a few files and graphics.<br>
+<br>
+First create a text file in note pad, called <span class="italic">'hit_count.txt'</span> 
+containing the digit 0, and save it in the same directory as you are going to 
+place the page containing the hit counter script (make sure there are no other 
+characters in the file).<br>
+<br>
+Next if you are going to be using graphics to display the hit count in a web page 
+you need to create a folder in the directory you have placed the <span class="italic">'hit_count.txt</span>' 
+text file in called <span class="italic">'counter_images'</span> and place 10 
+gif images in it with the names, <span class="italic">'0.gif', '1.gif', '2.gif', 
+.......... '9.gif'</span>. If you don't want to create your own there some with 
+this zip file.<br>
+<br>
+Now we got that out the way we can begin writing the code for the ASP Hit Counter. 
+Open up you favourite text editor and type in the following code.<br>
+<br>
+As the hit counter is displayed within a web page we first need to start with 
+the HTML for the web page.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code" height="27"> &lt;html&gt;<br>
+            &lt;head&gt;<br>
+            &lt;title&gt;Hit Counter&lt;/title&gt;<br>
+            &lt;/head&gt;<br>
+            &lt;body bgcolor=&quot;white&quot; text=&quot;black&quot;&gt;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+Now we can start writing the ASP. First we need to dimension the variables we 
+are going to be using.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td height="61"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code" height="12"> <span class="code">&lt;%</span><br>
+            <span class="comments">'Dimension variables</span><br>
+            <span class="code">Dim fsoObject&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            </span><span class="comments">'File System Object</span><span class="code"><br>
+            Dim tsObject&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comments">'Text 
+            Stream Object</span><span class="code"><br>
+            Dim filObject&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            </span><span class="comments">'File Object</span><span class="code"><br>
+            Dim lngVisitorNumber </span><span class="comments">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Holds 
+            the visitor number</span><span class="code"><br>
+            Dim intWriteDigitLoopCount&nbsp; </span><span class="comments"> 'Loop 
+            counter to display the graphical hit count</span> </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+To be able to manipulate the text file used to store the hit count we need to 
+use the Microsoft Scripting Runtime object the <span class="italic">'File System 
+Object'</span>. With this object we can read from and write two files on the web 
+server. In the line below we instantiate the File System Object.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code"> <span class="comments">'Create a File 
+            System Object variable</span><br>
+            Set fsoObject = Server.CreateObject(&quot;Scripting.FileSystemObject&quot;)</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+Using the <span class="italic">'GetFile'</span> method of the <span class="italic">'File 
+System Object'</span> we initialise the <span class="italic">'File Object'</span> 
+with the text file containing the hit count. To get the <span class="italic">'hit_count.txt'</span> 
+text file we need to use the physical path on the server to the file. To do this 
+we use the ASP <span class="italic">'Server'</span> object and the <span class="italic">'MapPath'</span> 
+method to get the path to this script and as it is to be saved to the same directory 
+as the <span class="italic">'hit_count.txt'</span> file we can use this as the 
+physical path to the file.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code" height="27"> <span class="comments">'Initialise 
+            a File Object with the path and name of text file to open</span><br>
+            Set filObject = fsoObject.GetFile(Server.MapPath(&quot;hit_count.txt&quot;))</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+Once the File Object has been initialise with the <span class="italic">'hit_count.txt'</span> 
+file we can then create a <span class="italic">'TextSteam Object'</span> that 
+we can use to read, create, and write too the <span class="italic">'hit_count.txt'</span> 
+text file.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code" height="27"> <span class="comments">'Open 
+            the visitor counter text file</span><br>
+            Set tsObject = filObject.OpenAsTextStream</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+Next using the <span class="italic">'TextSteam Object'</span>, we created in the 
+last line, and the <span class="italic">'ReadAll' </span>method to read the contents 
+of the <span class="italic">'hit_count.txt'</span> text file into a variable. 
+We are also using the VBScript function <span class="italic">'CLng'</span> to 
+convert the text from the <span class="italic">'hit_count.txt'</span> into the 
+data type, long integer.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code" height="27"> <span class="comments">'Read 
+            in the visitor number from the visitor counter file</span><br>
+            lngVisitorNumber = CLng(tsObject.ReadAll)</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+Now we take the number placed into the variable and add one to it. <br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code" height="27"> <span class="comments">'Increment 
+            the visitor counter number by 1</span><br>
+            lngVisitorNumber = lngVisitorNumber + 1</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+Using the <span class="italic">'CreateTextFile'</span> method of the <span class="italic">'File 
+System Object'</span> we create a new text file called <span class="italic">'hit_count.txt'</span> 
+over writing the original text file so that we can save the new hit count to the 
+file. Again we are using the ASP <span class="italic">'Server'</span> object and 
+the <span class="italic">'MapPath'</span> method to get the path to the script.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code" height="27"> <span class="comments">'Create 
+            a new visitor counter text file over writing the previous one</span><br>
+            Set tsObject = fsoObject.CreateTextFile(Server.MapPath(&quot;hit_count.txt&quot;))</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+Next using the <span class="italic">'TextSteam Object'</span> we write the new 
+hit count to the <span class="italic">'hit_count.txt'</span> text file. We are 
+also using the <span class="italic">'CStr'</span> VBScript function to convert 
+the long integer number back into a string.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code" height="27"> <span class="comments">'Write 
+            the new visitor number to the text file</span><br>
+            tsObject.Write CStr(lngVisitorNumber)</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+We have finished using the server objects now so we can release them freeing up 
+server resources.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code" height="27"> <span class="comments">'Reset 
+            server objects</span><br>
+            Set fsoObject = Nothing<br>
+            Set tsObject = Nothing<br>
+            Set filObject = Nothing</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+Now we have finished reading in the hit count, updating it, and saving it back 
+to the server we now need to display the hit count in a web page.<br>
+<br>
+I'm going to explain two ways of doing this, either with just text, or with graphics. 
+First I'm going to show you how to display it as text as this is the simplest 
+way.<br>
+<br>
+To display the hit count as text we display the value held in the hit count variable 
+using the ASP <span class="italic">'Response'</span> object and the <span class="italic">'Write'</span> 
+method to write the hit count to the HTTP stream to display the value in the web 
+page.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code"> <span class="comments">'Display the hit 
+            count as text</span><br>
+            'Response.Write(lngVisitorNumber)</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+If you wish to show the hit count in a graphical format then you need to replace 
+the line above with the following.<br>
+<br>
+Here we use a <span class="italic">'For.....Next'</span> loop to display each 
+digit in the hit count. Using the VBScript <span class="italic">'Len'</span> function 
+to get the length of the hit count number so we know how many times to loop round 
+(eg. If the hit count was '9999' we would need to loop round 4 times to display 
+each digit in the number).<br>
+<br>
+Within the loop we use <span class="italic">'Response.Write</span>' again to write 
+to the web page. To choose which <span class="italic">'gif'</span> image we are 
+going to display we use the VBScript<span class="italic"> 'Mid'</span> function 
+to find the which digit in the hit count we are displaying in this iteration of 
+the loop.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code" height="27"> <span class="comments">'Loop 
+            to display graphical digits</span><br>
+            For intWriteDigitLoopCount = 1 to Len(lngVisitorNumber)<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">'Display the graphical 
+            hit count</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Response.Write(&quot;&lt;img src=&quot;&quot;counter_images/&quot;) 
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Response.Write(Mid(lngVisitorNumber, intWriteDigitLoopCount, 
+            1) &amp; &quot;.gif&quot;&quot;&quot;) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Response.Write(&quot;alt=&quot;&quot;&quot; 
+            &amp; Mid(lngVisitorNumber, intWriteDigitLoopCount, 1) &amp; &quot;&quot;&quot;&gt;&quot;)<br>
+            <br>
+            Next<br>
+            %&gt; </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+Finally we need to finish the HTML for the web page we are displaying the hit 
+count in.<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" bgcolor="#E4E4E4">
+        <tr> 
+          <td align="left" class="code" height="2"> &lt;/body&gt;<br>
+            &lt;/html&gt;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+Now save the file with any name you like in the same directory as the <span class="italic">'hit_count.txt</span>' 
+text file (remember to give this file the extension .asp).<br>
+<br>
+And that's it, you have now created a hit counter for a web page, remember to 
+run the page through an ASP enabled web server. <br>
+<p align="center"> &copy; Copyright 2001 Web Wiz Guide </p>
+</body>
+</html>

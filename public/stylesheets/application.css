@@ -1,0 +1,205 @@
+html,body {
+	background: url('../../images/bkground1.png') #999999;
+	background-position:center top;
+  background-repeat:repeat-y;
+  height: 800px;
+/*	background: #826146;*/
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  color: #333;
+  font-size: 85%;
+/*  height: 100%;*/
+}
+body, div, h1, h2, h3, h4, h5, h6, p, ul, img {
+	margin: 0px; 
+	padding: 0px;
+}
+
+#logo {
+	float:left;
+	height:120px;
+	margin-left:70px;
+	position:relative;
+	width:400px;
+}
+
+#logo a {
+	height:120px;
+	position:relative;
+	text-indent:-9999em;
+	width:400px;
+}
+
+#sidebar {
+	border: 1px solid #937d6a;
+	position: relative;
+	float:left;
+	min-height:259px;
+	margin:100px 0 20px 0;
+	width:395px;
+	background: #6b4d34 url('../../images/van.jpg') no-repeat scroll 0 0;
+	-moz-box-shadow: 0px 1px 2px #000;
+	-webkit-box-shadow: 0px 1px 2px #000;
+	box-shadow: 0px 1px 2px #000;
+}
+
+#logo  {
+  background: url('../../images/banner_left1.gif') 0px 0px no-repeat;
+  height:172px;
+  margin: 10px auto;
+  position:relative;
+  text-indent:-9999em;
+  width:970px;
+  padding-top: 5px;
+}
+
+#content {
+  background:none repeat scroll 0 0 #CCCCCC;
+  height:960px;
+  margin:0 auto;
+  padding-bottom:20px;
+  position:relative;
+  width:970px;
+}
+#content h2, #content h3 {
+	color:#fff;
+	text-shadow: 0px 1px 1px #000;
+	float:left;
+	font-size:28px;
+	margin:20px 0 20px 288px;
+}
+#content h3 {
+	font-size: 20px;
+}
+#content h4 {
+	color:#CCCCCC;
+	float:left;
+	font-size:20px;
+	margin:40px 0 10px 0;
+	width:650px;
+}
+
+
+#content form {
+	position: relative;
+	float: left;
+	width: 455px;
+	margin-left: 60px;
+}
+#contact_heading {
+	width: 558px;
+	height: 90px;
+	position: relative;
+	float: left;
+}
+#contact_heading h2 {
+  color:#000099;
+  font-size:30px;
+  height:30px;
+  width:558px;
+}
+#content label {
+	color:#000099;
+	float:left;
+	margin-left:35px;
+	margin-top:20px;
+	position:relative;
+	text-align:left;
+	width:100%;
+	font-size: 14px;
+}
+#content input {
+  border:1px solid #000099;
+  color:#000099;
+  float:left;
+  font-size:13px;
+  height:25px;
+  margin-left:30px;
+  margin-top:5px;
+  padding:3px;
+  position:relative;
+  text-align:left;
+}
+#content textarea {
+	border:1px solid #000099;
+	float:left;
+	margin-left:30px;
+	margin-top:5px;
+	position:relative;
+	text-align:left;
+}
+#content div.form_field {
+	width: 100%;
+	height: 35px;
+	text-align: left;
+	position: relative;
+	float: left;
+}
+#content div.form_field_text {
+	float:left;
+	height:120px;
+	position:relative;
+	text-align:left;
+	width:100%;
+}
+#content div.form_field_select {
+	width: 100%;
+	height: 55px;
+	text-align: left;
+	position: relative;
+	float: left;
+	margin-bottom:20px;
+}
+#content div.form_field_button {
+	height:80px;
+	width:100%;
+}
+#content div.error {
+	position: relative;
+	color:#FF0000;
+	float:left;
+	margin-left:32px;
+	margin-top:6px;
+	text-align:left;
+	width:440px;
+}
+#content select {
+	position: relative;
+	float: left;
+	height:25px;
+	margin-left:30px;
+	margin-top:5px;
+	padding-top:2px;
+	color: #000099;
+}
+#content textarea {
+	position: relative;
+	float: left;
+	margin-left:30px;
+	margin-top:5px;
+}
+#content .btn {
+	background:#fff;
+	border:1px solid #000099;
+	display:block;
+	float:left;
+	height:30px;
+	margin-left:30px;
+	margin-top:25px;
+	position:relative;
+	text-align:center;
+	width:70px;
+	color: #000099;
+}
+#content .btn:hover {
+	background: #000099;
+	border:1px solid #000;
+	float:left;
+	height:30px;
+	margin-left:30px;
+	margin-top:25px;
+	position:relative;
+	text-align:center;
+	width:70px;
+	display:block;
+	color: #fff;
+}
