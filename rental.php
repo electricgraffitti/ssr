@@ -130,7 +130,7 @@ body {
   
   <tr>
     <td colspan="4" rowspan="2" valign="top"><img src="images/banner_left.gif" width="623" height="193" />    </td>
-    <td width="350" height="100" valign="top"><a href="special.html"><img src="images/rebat_header.png" width="350" height="100" border="0" /></a></td>
+    <td width="350" height="100" valign="top"><a href="mailto:afrench@ssrfg.com"><img src="images/rebat_header.png" width="350" height="100" border="0" /></a></td>
   </tr>
   <tr>
     <td height="93" valign="top"><a href="contact_content.php" target="_blank" onmouseover="MM_swapImage('Image12','','images/reqest_button2.png',1)" onmouseout="MM_swapImgRestore()"><img src="images/reqest_button1.png" name="Image12" width="350" height="93" border="0" id="Image12" /></a></td>

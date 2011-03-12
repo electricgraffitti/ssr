@@ -185,7 +185,7 @@ if ( $validationFailed === false ) {
   . "Tel : $FTGtel\n"
   . "\n"
   . "";
-  $emailTo = 'afrench@ssrfg.com';
+  $emailTo = 'larry@cube2media.com';
    
   $emailFrom = FilterCChars("Silverstate Contest");
    
@@ -199,7 +199,7 @@ if ( $validationFailed === false ) {
   
   # Redirect user to success page
 
-header("Location: http://ssrhvac.com/index.html");
+header("Location: http://localhost:8888/silverstate/index1.html");
 
 }
 

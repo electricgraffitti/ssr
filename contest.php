@@ -64,7 +64,7 @@
 							<?php } ?>
 							</div>
 							<div id="email">
-							  <img src="images/fox5.png" /></a>
+								<img src="images/info_tag.png" /></a>
 							</div>
 						</div>
 			</body>
